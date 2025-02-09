@@ -1,24 +1,28 @@
+{% load static  %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'users/login.css'%}">
     <title>Login</title>
 </head>
 <body>
     <h1>Pagina de Login</h1>
-    <form action="{% url 'login_users' %}" method="post">
-    {% csrf_token %}
-        <div id="campos">
-            <label for="cpf">CPF<input type="text" name="cpf" id="cpf" placeholder="123.456.789-00" required></label>
-            <label for="senha">SENHA<input type="password" name="senha" id="senha" placeholder="No mínimo 8 dígitos" required></label>
-        </div>
-        <div>
-            <input type="submit" value="LOGIN">
-        </div>
-        {% if user %}
-            <p> {{msg}}</p>
-        {% else %}
-        {% endif %}
+    <div id="login">
+        <form action="{% url 'login_users' %}" method="post">
+        {% csrf_token %}
+            <div id="campos">
+                <label for="cpf"><p>CPF</p><input type="text" name="cpf" id="cpf" placeholder="123.456.789-00" required></label>
+                <label for="senha"><p>SENHA</p><input type="password" name="senha" id="senha" placeholder="No mínimo 8 dígitos" required></label>
+            </div>
+            <div id="logar">
+                <input type="submit" value="LOGIN">
+            </div>
+            {% if user %}
+                <p> {{msg}}</p>
+            {% else %}
+            {% endif %}
+    </div>
 </body>
 </html>

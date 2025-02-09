@@ -1,11 +1,12 @@
-body {
+body{
     margin: 0;
     padding: 0;
     display: grid;
     place-items: center;
 }
 
-#cadastro{
+#login{
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +15,7 @@ body {
     padding: 30px; 
 }
 
-#cadastro #cadastrar{
+#login #logar{
     padding-top: 30px;
     display: flex;
     justify-content: center;

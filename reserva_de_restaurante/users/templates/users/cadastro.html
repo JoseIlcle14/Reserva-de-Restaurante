@@ -10,21 +10,32 @@
 </head>
 <body>
     <h1>Pagina de Cadastro</h1>
-    <form action="{% url 'cadastro' %}" method="post">
-    {% csrf_token %}
-        <div id="campos">
-            <label for="nome">NOME<input type="text" name="nome" id="nome" required></label>
-            <label for="cpf">CPF<input type="text" name="cpf" id="cpf" placeholder="123.456.789-00" required></label>
-            <label for="email">EMAIL<input type="email" name="email" id="email" placeholder="exemplo@gmail.com" required></label>
-            <label for="senha">SENHA<input type="password" name="senha" id="senha" placeholder="No mínimo 8 dígitos" required></label>
-        </div>
-        <div>
-            <input type="submit" value="CADASTRAR">
-        </div>
-        {% if user %}
-            <p> {{msg}}</p>
-        {% else %}
-        {% endif %}
-    </form>
+    <div id="cadastro">
+        <form action="{% url 'cadastro' %}" method="post" autocomplete="on">
+        {% csrf_token %}
+            <div id="campos">
+                <div id="nome">
+                    <label for="nome"><p>NOME</p><input type="text" name="nome" id="nome" required></label>
+                </div>
+                <div id="cpf">
+                    <label for="cpf"><p>CPF</p><input type="text" name="cpf" id="cpf"placeholder="123.456.789-00" required></label>
+                </div>
+                <div id="email">
+                    <label for="email"><p>EMAIL</p><input type="email" name="email" id="email" placeholder="exemplo@gmail.com" required>
+                    </label>
+                </div>
+                <div id="senha">
+                    <label for="senha"><p>SENHA</p><input type="password" name="senha" id="senha" placeholder="No mínimo 8 dígitos" required></label>
+                </div>
+            </div>
+            <div id="cadastrar">
+                <input type="submit" value="CADASTRAR">
+            </div>
+            {% if user %}
+                <p> {{msg}}</p>
+            {% else %}
+            {% endif %}
+        </form>
+    </div>
 </body>
 </html>
